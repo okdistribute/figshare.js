@@ -1,10 +1,13 @@
 {
   "name": "figshare",
   "version": "1.0.0",
-  "description": "figshare js",
+  "description": "Figshare cli and node.js library",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "figshare": "cli.js"
   },
   "repository": {
     "type": "git",

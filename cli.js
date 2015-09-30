@@ -6,7 +6,7 @@ var through = require('through2')
 if (args._[0] === 'download') {
   var id = args._[1]
   var dir = args._[2] || process.cwd()
-  figshare.get(id, function (err, article) {
+  return figshare.get(id, function (err, article) {
     if (err) throw err
     figshare.download(article, dir, args, function (err) {
       if (err) throw err
@@ -21,8 +21,10 @@ if (args._[0] === 'search') {
     output = ''
     for (var i in data.items) {
       var result = data.items[i]
-      output += result.article_id + ' ' + result.title.replace('<p>', '').replace('</p>', '') + ' \n' 
+      output += result.article_id + ' ' + result.title.replace('<p>', '').replace('</p>', '') + ' \n'
     }
     next(null, output)
   })).pipe(process.stdout)
 }
+
+console.log('figshare {search,download}')
