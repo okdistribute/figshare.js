@@ -7,7 +7,7 @@ A library for interacting with Figshare API.
 npm install -g figshare
 ```
 
-### figshare download <article> [dir] [--raw]
+### figshare download [article] [dir] [--raw]
 
 Download an article's assets and metadata to a given directory. Will create a `datapackage.json` by default, and uses figshare's article spec if `--raw` supplied.
 
@@ -25,7 +25,7 @@ $ figshare download http://figshare.com/articles/Group_4_Dataset_2_Grassland_dat
 ```
 
 
-### figshare search <term>
+### figshare search [term]
 
 ```
 $ figshare search hello
