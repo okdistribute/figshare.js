@@ -46,13 +46,13 @@ Figshare.prototype.download = function (article, dir, opts, cb) {
   tasks.push(function (done) {
     if (opts.raw) {
       name = 'article.json'
-      datapackage = article
+      metadata = article
     } else {
       name = 'datapackage.json'
-      datapackage = self.datapackage(article)
+      metadata = self.datapackage(article)
     }
     var writer = fs.createWriteStream(path.join(dir, name))
-    writer.write(JSON.stringify(article, null, 2))
+    writer.write(JSON.stringify(metadata, null, 2))
     writer.end()
     done()
   })
@@ -63,7 +63,7 @@ Figshare.prototype.download = function (article, dir, opts, cb) {
         var writer = fs.createWriteStream(path.join(dir, file.name))
         writer.on('error', done)
         writer.on('finish', done)
-        got.stream(file.download_url).pipe(writer)
+        got.stream(file.download_url || file.url).pipe(writer)
       })
     })(i)
   }
@@ -72,10 +72,30 @@ Figshare.prototype.download = function (article, dir, opts, cb) {
 
 Figshare.prototype.datapackage = function (article) {
   // normalizes as a datapackage.json
-  var datapackage = extend({}, article)
-  datapackage.resources = datapackage.files
-  delete datapackage.files
-  return datapackage
+  var res = extend({}, article)
+  res.name = res.title
+  res.homepage = res.figshare_url
+  delete res.figshare_url
+  res.resources = res.files.map(function (resource) {
+    resource.url = resource.download_url
+    delete resource.download_url
+    resource.mediatype = resource.mime_type
+    delete resource.mime_type
+    return resource
+  })
+  delete res.files
+
+  res.contributors = res.authors.map(function (author) {
+    return {
+      name: author.full_name || author.first_name + ' ' + author_last_name
+    }
+  })
+  delete res.authors
+
+  res.author = res.owner
+  delete res.owner
+
+  return res
 }
 
 Figshare.prototype._reqOpts = function (query) {
