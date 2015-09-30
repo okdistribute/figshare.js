@@ -21,7 +21,14 @@ datapackage.json
 
 Also can work if you give the HTML URL link:
 ```
-figshare download http://figshare.com/articles/Group_3_Dataset_2_Grassland_data_of_the_plant_Purple_Aster_Aster_prenathoides_/1559145
+$ figshare download http://figshare.com/articles/Group_4_Dataset_2_Grassland_data_of_the_plant_Purple_Aster_Aster_prenathoides_/1559145
+```
+
+
+### figshare search
+
+```
+$ figshare 
 ```
 
 ## JavaScript

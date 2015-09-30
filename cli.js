@@ -21,7 +21,7 @@ if (args._[0] === 'search') {
     output = ''
     for (var i in data.items) {
       var result = data.items[i]
-      output += result.title + ' \n  ' + result.url + '\n\n'
+      output += result.article_id + ' ' + result.title.replace('<p>', '').replace('</p>', '') + ' \n' 
     }
     next(null, output)
   })).pipe(process.stdout)

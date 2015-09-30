@@ -85,7 +85,7 @@ Figshare.prototype._reqOpts = function (query) {
   })
   var opts = {
     method: 'GET',
-    uri: this.uri + '?' + querystring,
+    uri: this.uri + '/articles/search?' + querystring,
   }
   return opts
 }

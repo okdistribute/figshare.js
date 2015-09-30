@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/karissa/figshare#readme",
   "dependencies": {
+    "debug": "^2.2.0",
     "extend": "^3.0.0",
     "figshare-search": "^1.0.5",
     "got": "^4.2.0",
     "minimist": "^1.2.0",
+    "paged-http-stream": "^1.0.1",
     "run-parallel": "^1.1.4",
     "through2": "^2.0.0"
   }
