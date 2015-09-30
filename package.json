@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/karissa/figshare/issues"
   },
-  "homepage": "https://github.com/karissa/figshare#readme"
+  "homepage": "https://github.com/karissa/figshare#readme",
+  "dependencies": {
+    "extend": "^3.0.0",
+    "figshare-search": "^1.0.5",
+    "got": "^4.2.0",
+    "minimist": "^1.2.0",
+    "run-parallel": "^1.1.4",
+    "through2": "^2.0.0"
+  }
 }
