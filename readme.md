@@ -25,10 +25,19 @@ $ figshare download http://figshare.com/articles/Group_4_Dataset_2_Grassland_dat
 ```
 
 
-### figshare search
+### figshare search <term>
 
 ```
-$ figshare 
+$ figshare search hello
+1444470 UGH HATE FIGSHARE
+1444440 Hello
+1351281 <i>Shigella</i> serotypes identified in the study.
+1351279 Distribution of organism identified in children with watery or bloody diarrhea by age group.
+1351282 <i>Salmonella</i> serotypes identified in the study (N = 355).
+1351284 Enteric Bacterial Pathogens in Children with Diarrhea in Niger: Diversity and Antimicrobial Resistance
+1115016 An Adaptive Hello Messaging and Multipath Route  Maintenance in On-Demand MANET Routing Protocol
+1100253 An Energy Efficient Acknowledgement Based Ids For Manet
+1098621 A Beaconless Routing Approach for Energy Conservation in  Wireless Sensor Network
 ```
 
 ## JavaScript
